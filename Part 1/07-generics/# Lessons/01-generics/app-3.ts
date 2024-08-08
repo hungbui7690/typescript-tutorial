@@ -3,9 +3,19 @@
   - allow you to use types as formal parameters.
   - allow you to write reusable and generalized forms of functions, classes, and interfaces
 
+
+*****************************
+
+  # TypeScript generics come to the rescue
+
+
 */
 
-// TypeScript generics come to the rescue
+// original
+function x(items: number[]): number {
+  let randomIndex = Math.floor(Math.random() * items.length) // return 0 to item.length-1
+  return items[randomIndex]
+}
 
 // The following shows a generic function that returns the random element from an array of type T:
 function getRandomElement<T>(items: T[]): T {

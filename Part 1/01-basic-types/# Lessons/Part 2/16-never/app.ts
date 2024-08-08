@@ -2,14 +2,19 @@
   never 
   - is used to represent a value that never occurs. Because of this, you cannot assign any value to a variable with a never type.
 
+  - Use Case: function that never returns anything
+    + throws error 
+    + run inf. loop
+
+
 */
 
-// Typically, you use the never type to represent the return type of a function that always throws an error
+// 1. Typically, you use the never type to represent the return type of a function that always throws an error
 function raiseError(message: string): never {
   throw new Error(message)
 }
 
-// If you have a function that contains an indefinite loop, its return type should be never type. For example:
+// 2. If you have a function that contains an indefinite loop, its return type should be never type. For example:
 function forever(): never {
   while (true) {}
 }
@@ -19,17 +24,18 @@ function forever(): never {
   Variables can also acquire the never type when you narrow its type by a type guard that can never be true.
 */
 
-// For example, without the never type, the following function causes an error because not all code paths return a value:
+// 3. For example, without the never type, the following function causes an error because not all code paths return a value:
 function fn(a: string | number): boolean {
   if (typeof a === 'string') {
     return true
   } else if (typeof a === 'number') {
     return false
   }
-} // Function lacks ending return statement and return type does not include 'undefined'.
+}
+// Function lacks ending return statement and return type does not include 'undefined'.
 // If the type of a is not a string or number, then the fn function returns undefined which is not boolean as indicated in the return type.
 
-// To make the code valid, you can throw an error inside the fn function:
+// 4. To make the code valid, you can throw an error inside the fn function:
 function fnX(a: string | number): boolean {
   if (typeof a === 'string') {
     return true
@@ -39,7 +45,7 @@ function fnX(a: string | number): boolean {
   throw new Error('Invalid type')
 }
 
-// Alternatively, you can define a function whose return type is never and return its call within the fn function like this:
+// 5. Alternatively, you can define a function whose return type is never and return its call within the fn function like this:
 function raiseErrorX(msg: string): never {
   throw new Error(msg)
 }
@@ -55,11 +61,11 @@ function fnZ(a: string | number): boolean {
   The fn function takes an argument that can be either a string or a number and returns a boolean value. The code that falls back to the raiseError shouldn’t occur given the type constraint.
 
 
-  But why use raiseError?
+  But why use raiseErrorX?
+  + This helps in future-proofing the function, if you add new types to the union type of the argument, the error handling will immediately signal that the new type needs to be considered in the if statement.
+  + Additionally, including raiseError clearly communicates our intent that any other type of argument a is invalid and should not happen, making the code easier to maintain.
 
-      This helps in future-proofing the function, if you add new types to the union type of the argument, the error handling will immediately signal that the new type needs to be considered in the if statement.
 
-      Additionally, including raiseError clearly communicates our intent that any other type of argument a is invalid and should not happen, making the code easier to maintain.
 */
 
 /*
@@ -76,6 +82,7 @@ function fnZ(a: string | number): boolean {
 
 
   Summary
+  - Use the never type to represent a value that never occurs.
 
-      Use the never type to represent a value that never occurs.
+
 */

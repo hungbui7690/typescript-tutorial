@@ -4,12 +4,13 @@
 
 */
 
-// Arrays
+// 1. Arrays
 // To annotate an array type you use a specific type followed by a square bracket : type[] :
 // For example, the following declares an array of strings:
 let names: string[] = ['John', 'Jane', 'Peter', 'David', 'Mary']
 
-// Objects
+// \\\\\\\\\\\\\\\\\\\\\\\\
+// 2. Objects
 // To specify a type for an object, you use the object type annotation. For example:
 // a. type annotation
 let person: {
@@ -24,8 +25,8 @@ person = {
 } // valid
 // In this example, the person object only accepts an object that has two properties: name with the string type and age with the number type.
 
-///////////////////////////
-// Function arguments & return types
+// \\\\\\\\\\\\\\\\\\\\\\\\
+// 3. Function arguments & return types
 // The following shows a function annotation with parameter type annotation and return type annotation:
 let greeting: (name: string) => string
 

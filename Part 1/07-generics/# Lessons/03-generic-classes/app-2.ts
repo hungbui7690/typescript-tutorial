@@ -1,15 +1,14 @@
 /*
   Generic Classes
   - TypeScript generic classes example
-
     + In this example, we will develop a generic Stack class.
-
     + A stack is a data structure that works on the last-in-first-out (or LIFO) principle. It means that the first element you place into the stack is the last element you can get from the stack.
 
-    + Typically, a stack has a size. By default, it is empty. The stack has two main operations:
 
-        Push: push an element into the stack.
-        Pop: pop an element from the stack.
+    + Typically, a stack has a size. By default, it is empty. The stack has two main operations:
+      -> Push: push an element into the stack.
+      -> Pop: pop an element from the stack.
+
 
 */
 
@@ -18,6 +17,7 @@ class Stack<T> {
   private elements: T[] = []
 
   constructor(private size: number) {}
+
   isEmpty(): boolean {
     return this.elements.length === 0
   }

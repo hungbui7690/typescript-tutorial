@@ -1,6 +1,7 @@
 /*
   Extend Interfaces
 
+
 */
 
 interface A {
@@ -11,8 +12,8 @@ interface B extends A {
   b(): void
 }
 
-/////////////////////////////
-// Interfaces extending multiple interfaces
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// # Interfaces extending multiple interfaces
 
 // An interface can extend multiple interfaces, creating a combination of all the interfaces. For example:
 interface C {

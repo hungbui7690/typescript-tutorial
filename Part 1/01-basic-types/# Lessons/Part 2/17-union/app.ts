@@ -2,9 +2,10 @@
   union 
   - allows you to store a value of one or several types in a variable.
 
+
 */
 
-// Sometimes, you will run into a function that expects a parameter that is either a number or a string. For example:
+// 1. Sometimes, you will run into a function that expects a parameter that is either a number or a string. For example:
 function add(a: any, b: any) {
   if (typeof a === 'number' && typeof b === 'number') {
     return a + b
@@ -24,15 +25,15 @@ function add(a: any, b: any) {
 // This code will be compiled successfully but cause an error at runtime:
 add(true, false)
 
-////////////////////////////
-// To resolve this, you can use the TypeScript union type. The union type allows you to combine multiple types into one type.
+// \\\\\\\\\\\\\\\\\\\\\\\\\\
+// 2. To resolve this, you can use the TypeScript union type. The union type allows you to combine multiple types into one type.
 // For example, the following variable is of type number or string:
 let result: number | string
 result = 10 // OK
 result = 'Hi' // also OK
 result = false // a boolean value, not OK
 
-// A union type describes a value that can be one of several types, not just two. For example number | string | boolean is the type of a value that can be a number, a string, or a boolean.
+// 3. A union type describes a value that can be one of several types, not just two. For example number | string | boolean is the type of a value that can be a number, a string, or a boolean.
 // Back to the add() function example, you can change the types of parameters from the any to a union like this:
 function addX(a: number | string, b: number | string) {
   if (typeof a === 'number' && typeof b === 'number') {
@@ -44,7 +45,7 @@ function addX(a: number | string, b: number | string) {
   throw new Error('Parameters must be numbers or strings')
 }
 
-// We can specify the union return type for the add function:
+// 4. We can specify the union return type for the add function:
 function addY(a: number | string, b: number | string): number | string {
   if (typeof a === 'number' && typeof b === 'number') {
     return a + b
@@ -58,6 +59,7 @@ function addY(a: number | string, b: number | string): number | string {
 
 /*
   Summary
+  - A TypeScript union type allows you to store a value of one or several types in a variable.
 
-    A TypeScript union type allows you to store a value of one or several types in a variable.
+
 */

@@ -1,19 +1,20 @@
 /*
   Generic Classes
 
+
 */
 
-// A generic class has a generic type parameter list in angle brackets <> that follows the name of the class:
+// 1. A generic class has a generic type parameter list in angle brackets <> that follows the name of the class:
 class className<T> {
   //...
 }
 
-// TypeScript allows you to have multiple generic types in the type parameter list. For example:
+// 2. TypeScript allows you to have multiple generic types in the type parameter list. For example:
 class classNameX<K, T> {
   //...
 }
 
-// The generic constraints are also applied to the generic types in the class:
+// 3. The generic constraints are also applied to the generic types in the class:
 type TypeA = {
   firstName: string
   getAge(): number

@@ -1,9 +1,11 @@
 /*
   Generic Constraints
+  - <extends>
+
 
 */
 
-// In order to denote the constraint, you use the extends keyword. For example:
+// 1. In order to denote the constraint, you use the extends keyword. For example:
 function merge<U extends object, V extends object>(obj1: U, obj2: V) {
   return {
     ...obj1,

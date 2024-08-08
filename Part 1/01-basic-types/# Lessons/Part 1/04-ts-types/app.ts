@@ -1,44 +1,39 @@
 /*
   Typescript Types 
   
-  \\\\\\\\\\\\\\\\\\
+
+***********************
   
   What is a type in TypeScript
   - In TypeScript, a type is a convenient way to refer to different properties and functions that a value has.
   - A value is anything you can assign to a variable e.g., a number, a string, an array, an object, and a function.
 
   - or example, see the following value:
-
-        'Hello'
-
+    -> 'Hello'
   - When you look at this value, you can say it is a string. This value has properties and methods that a string has.
-  - For example, the 'Hello' value has a property called length that returns the number of characters:
 
-        console.log('Hello'.length); // 5
+  - For example, the 'Hello' value has a property called length that returns the number of characters:
+    -> console.log('Hello'.length); // 5
 
   - It also has many methods like match(), indexOf(), and toLocaleUpperCase(). For example:
-
-        console.log('Hello'.toLocaleUpperCase()); // HELLO 
+    -> console.log('Hello'.toLocaleUpperCase()); // HELLO 
 
   - When you look at the value 'Hello' and describe it by listing the properties and methods, it would be inconvenient.
   - A shorter way to refer to a value is to assign it a type. In this example, you say 'Hello' is a string. Then, you know that you can use the properties and methods of a string for the value 'Hello'.
 
   - In conclusion, in TypeScript:
+    + a type is a label that describes the different properties and methods that a value has
+    + every value has a type.
 
-      a type is a label that describes the different properties and methods that a value has
-      every value has a type.
 
-  \\\\\\\\\\\\\\\\\\\\\\\
+***********************
 
   Types in TypeScript
-
   - TypeScript inherits the built-in types from JavaScript. TypeScript types are categorized into:
-
-        Primitive types
-        Object types
+    + Primitive types
+    + Object types
 
   - Primitive types
-
       Name	       Description
       string	     Represent text data.
       number	     Represent numeric values.
@@ -48,16 +43,16 @@
       symbol	     Represent a unique constant value.
 
   - Object types
-      
-      Object types are functions, arrays, classes, etc. Later, you’ll learn how to create custom object types.
+    -> Object types are functions, arrays, classes, etc. Later, you’ll learn how to create custom object types.
 
-  \\\\\\\\\\\\\\\\\
+  
+***********************
 
   Purposes of types in TypeScript
   - There are two main purposes of types in TypeScript:
+    + First, types are used by the TypeScript compiler to analyze your code for errors.
+    + Second, types allow you to understand what values are associated with variables.
 
-      First, types are used by the TypeScript compiler to analyze your code for errors.
-      Second, types allow you to understand what values are associated with variables.
 
 */
 

@@ -2,11 +2,12 @@
   Access Modifiers
   - private, protected, and public.
 
-  ** Note that TypeScript controls the access logically during compilation time, not at runtime.
+  🎨 Note that TypeScript controls the access logically during compilation time, not at runtime.
+
 
 */
 
-// The private modifier
+// 1. The private modifier
 // The private modifier limits the visibility to the same class only. When you add the private modifier to a property or method, you can access that property or method within the same class. Any attempt to access private properties or methods outside the class will result in an error at compiled time.
 // The following example shows how to use the private modifier to the snn, firstName, and lastName properties of the person class:
 class Person1 {
@@ -17,7 +18,7 @@ class Person1 {
   // ...
 }
 
-// Once the private property is in place, you can access the ssn property in the constructor or methods of the Person class. For example:
+// 2. Once the private property is in place, you can access the ssn property in the constructor or methods of the Person class. For example:
 class Person {
   private ssn: string
   private firstName: string
@@ -34,6 +35,6 @@ class Person {
   }
 }
 
-// The following attempts to access the ssn property outside the class:
+// 3. The following attempts to access the ssn property outside the class:
 let person = new Person('153-07-3130', 'John', 'Doe')
 console.log(person.ssn) // error TS2341: Property 'ssn' is private and only accessible within class 'Person'.

@@ -9,14 +9,22 @@
   - TypeScript uses the JavaScript syntaxes and adds additional syntaxes for supporting Types.
   - If you have a JavaScript program that doesn’t have any syntax errors, it is also a TypeScript program. It means that all JavaScript programs are TypeScript programs. This is very helpful if you’re migrating an existing JavaScript codebase to TypeScript.
 
-\\\\\\\\\\\\\\\\\\\\\\\\
+
+**********************
 
   Why TypeScript
-
   - The main goals of TypeScript are:
+      + Introduce optional types to JavaScript.
+      + Implement planned features of future JavaScript, a.k.a. ECMAScript Next or ES Next to the current JavaScript.
 
-        Introduce optional types to JavaScript.
-        Implement planned features of future JavaScript, a.k.a. ECMAScript Next or ES Next to the current JavaScript.
+
+**********************
+
+  - Install ESLint
+    ~~ npm install --save-dev eslint
+    ~~ npm init @eslint/config@latest 
+    ~~ npm i -D @stylistic/eslint-plugin-js
+
 
 */
 
@@ -55,7 +63,8 @@ result = addTS(input1.value, input2.value)
 
     - And TypeScript generally supports features that are in stage 3.
 
-  \\\\\\\\\\\\\\\\\\\\\\\
+  
+**************************
 
   Summary
 

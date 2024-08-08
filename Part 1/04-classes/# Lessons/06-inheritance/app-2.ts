@@ -8,9 +8,9 @@
 
   - JavaScript uses prototypal inheritance, not classical inheritance like Java or C#. ES6 introduces the class syntax that is simply the syntactic sugar of the prototypal inheritance. TypeScript supports inheritance like ES6.
 
+
 */
 
-// Suppose you have the following Person class:
 class Person {
   constructor(private firstName: string, private lastName: string) {}
 
@@ -23,18 +23,11 @@ class Person {
   }
 }
 
-// To inherit a class, you use the <extends> keyword. For example the following Employee class inherits the Person class:
-class Employee extends Person {
-  //...
-}
-// In this example, the Employee is a child class and the Person is the parent class.
-
-///////////////////////////
+// \\\\\\\\\\\\\\\\\\\\\\\\\
 // Constructor
-
 // Because the Person class has a constructor that initializes the firstName and lastName properties, you need to initialize these properties in the constructor of the Employee class by calling its parent class’ constructor.
 
-// To call the constructor of the parent class in the constructor of the child class, you use the super() syntax. For example:
+// 1. To call the constructor of the parent class in the constructor of the child class, you use the super() syntax. For example:
 class EmployeeX extends Person {
   constructor(firstName: string, lastName: string, private jobTitle: string) {
     // call the constructor of the Person class:
@@ -50,9 +43,8 @@ let employeeX = new EmployeeX('John', 'Doe', 'Web Developer')
 console.log(employeeX.getFullName()) // John Doe
 console.log(employeeX.describe()) // This is John Doe.
 
-////////////////////////
-// Method overriding
-
+// \\\\\\\\\\\\\\\\\\\\\\\\\
+// 2. Method overriding
 // When you call the employee.describe() method on the employee object, the describe() method of the Person class is executed that shows the message: This is John Doe.
 
 // If you want the Employee class has its own version of the describe() method, you can define it in the Employee class like this:
@@ -71,8 +63,8 @@ console.log(employeeY.describe()) // This is John Doe. I'm a Web Developer.
 
 /*
   Summary
+  - Use the extends keyword to allow a class to inherit from another class.
+  - Use super() to call the constructor of the parent class in the constructor of the child class. Also, use the super.methodInParentClass() syntax to invoke the methodInParentClass() in the method of the child class.
 
-    Use the extends keyword to allow a class to inherit from another class.
-    Use super() to call the constructor of the parent class in the constructor of the child class. Also, use the super.methodInParentClass() syntax to invoke the methodInParentClass() in the method of the child class.
 
 */

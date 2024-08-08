@@ -3,9 +3,13 @@
   - allow you to use types as formal parameters.
   - allow you to write reusable and generalized forms of functions, classes, and interfaces
 
-*/
 
-// Using any type
+****************************
+
+  # Using any type
+
+
+*/
 
 // One option to address this issue is to set the type of the array argument as any[]. By doing this, you need to write one function that works with an array of any type.
 function getRandomAnyElement(items: any[]): any {

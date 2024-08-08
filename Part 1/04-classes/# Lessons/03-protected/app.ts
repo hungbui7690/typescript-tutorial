@@ -2,11 +2,12 @@
   Access Modifiers
   - private, protected, and public.
 
-  ** Note that TypeScript controls the access logically during compilation time, not at runtime.
+  🏐 Note that TypeScript controls the access logically during compilation time, not at runtime.
+
 
 */
 
-// The public modifier
+// 1. The public modifier
 // The public modifier allows class properties and methods to be accessible from all locations. If you don’t specify any access modifier for properties and methods, they will take the public modifier by default.
 // For example, the getFullName() method of the Person class has the public modifier. The following explicitly adds the public modifier to the getFullName() method:
 class Person {
@@ -24,20 +25,19 @@ class Person {
     return `${this.firstName} ${this.lastName}`
   }
 }
-// It has the same effect as if the public keyword were omitted.
+// ⛳ It has the same effect as if the public keyword were omitted.
 
-////////////////////////////
+// \\\\\\\\\\\\\\\\\\\\\\\\\\
 /*
-  The protected modifier
+  2. The protected modifier
 
   - The protected modifier allows properties and methods of a class to be accessible within the same class and subclasses.
-
   - When a class (child class) inherits from another class (parent class), it is a subclass of the parent class.
 
   - The TypeScript compiler will issue an error if you attempt to access the protected properties or methods from anywhere else.
+  - To add the protected modifier to a property or a method, you use the protected keyword. For example:
 
 */
-// To add the protected modifier to a property or a method, you use the protected keyword. For example:
 class PersonY {
   protected ssn: string
 
@@ -45,7 +45,7 @@ class PersonY {
 }
 // The ssn property now is protected. It will be accessible within the Person class and in any class that inherits from the Person class. You’ll learn more about inheritance here.
 
-// The Person class declares the two private properties and one protected property. Its constructor initializes these properties to three arguments:
+// 3. The Person class declares the two private properties and one protected property. Its constructor initializes these properties to three arguments:
 class PersonZ {
   protected ssn: string
   private firstName: string
@@ -62,7 +62,7 @@ class PersonZ {
   }
 }
 
-// To make the code shorter, TypeScript allows you to both declare properties and initialize them in the constructor like this:
+// 4. To make the code shorter, TypeScript allows you to both declare properties and initialize them in the constructor like this:
 class PersonX {
   constructor(
     protected ssn: string,
@@ -78,11 +78,11 @@ class PersonX {
 
 /*
   Summary
+  + TypeScript provides three access modifiers to class properties and methods: private, protected, and public.
+    - The private modifier allows access within the same class.
+    - The protected modifier allows access within the same class and subclasses.
+    - The public modifier allows access from any location.
+    - Properties and methods have public access if you omit the access modifiers.
 
-      TypeScript provides three access modifiers to class properties and methods: private, protected, and public.
-      - The private modifier allows access within the same class.
-      - The protected modifier allows access within the same class and subclasses.
-      - The public modifier allows access from any location.
-      - Properties and methods have public access if you omit the access modifiers.
 
 */

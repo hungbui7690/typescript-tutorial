@@ -2,12 +2,16 @@
   First Program
 
   ~~ tsc app.ts
-    > generate app.js
+    + compile app.ts -> then generate app.js
   ~~ node app.js
-    > run app.js
+    + run app.js
+
+
+****************************
 
   - If you installed the ts-node module mentioned in the setting up TypeScript development environment, you can use just one command to compile the TypeScript file and execute the output file in one shot:
     @@ ts-node app.ts
+    @@ tsx app.ts
 
   - Test
     1. create index.html

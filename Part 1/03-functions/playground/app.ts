@@ -3,20 +3,18 @@
   - allows you to define multiple signatures for a single function and provide one implementation that handles all defined signatures.
   - enables a function to handle different types of arguments. Additionally, the TypeScript compiler uses the function signatures to perform compile-time type checking to ensure type safety.
 
-  *** Note that TypeScript function overloading is unlike the function overloading supported by other statically typed languages such as Java.
+  ⚾ Note that TypeScript function overloading is unlike the function overloading supported by other statically typed languages such as Java.
 
 
 */
 
-///////////////////////////
 // TypeScript function overloading example
-
 // Let’s start with a simple function that returns the sum of two numbers or strings.
-// First, define overloaded signatures
+// 1. define overloaded signatures
 function add(a: number, b: number): number
 function add(a: string, b: string): string
 
-// Second, provide the implementation for the add function:
+// 2. provide the implementation for the add function:
 function add(a: any, b: any): any {
   if (typeof a === 'number' && typeof b === 'number') {
     return a + b
@@ -26,13 +24,12 @@ function add(a: any, b: any): any {
   throw new Error('Invalid arguments')
 }
 
-// Third, use the overloaded function:
+// 3. use the overloaded function:
 console.log(add(10, 20)) // 30
 console.log(add('Hello, ', 'world!')) // 'Hello, world!
 
-///////////////////////////
-// Function overloading with optional parameters
-
+// \\\\\\\\\\\\\\\\\\\\\\\\\\
+// 4. Function overloading with optional parameters
 // When you overload a function, the number of required parameters must be the same. If an overload has more parameters than the other, you need to make the additional parameters optional. For example:
 function sum(a: number, b: number): number
 function sum(a: number, b: number, c: number): number
@@ -42,9 +39,8 @@ function sum(a: number, b: number, c?: number): number {
 }
 // The sum() function accepts either two or three numbers. The third parameter is optional. If you don’t make it optional, you will get an error.
 
-/////////////////////////
-// Method overloading
-
+// \\\\\\\\\\\\\\\\\\\\\\\\\\
+// 5. Method overloading
 // When a function is a property of a class, it is called a method. TypeScript also supports method overloading. For example:
 class Counter {
   private current = 0

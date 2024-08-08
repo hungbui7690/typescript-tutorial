@@ -1,12 +1,13 @@
 /*
   Type Guards
   - allow you to narrow down the type of a variable within a conditional block.
+    -> <typeof>
+
 
 */
 
 // typeof
-
-// Let’s take a look at the following example:
+// 1. Let’s take a look at the following example:
 type alphanumeric = string | number
 
 function add(a: alphanumeric, b: alphanumeric) {
@@ -27,10 +28,11 @@ function add(a: alphanumeric, b: alphanumeric) {
 
 /*
   How it works:
+  - First, define the alphanumeric type that can hold either a string or a number.
+  - Next, declare a function that adds two variables a and b with the type of alphanumeric.
+  - Then, check if both types of arguments are numbers using the typeof operator. If yes, then calculate the sum of arguments using the + operator.
+  - After that, check if both types of arguments are strings using the typeof operator. If yes, then concatenate two arguments.
+  - Finally, throw an error if arguments are neither numbers nor strings.
 
-    - First, define the alphanumeric type that can hold either a string or a number.
-    - Next, declare a function that adds two variables a and b with the type of alphanumeric.
-    - Then, check if both types of arguments are numbers using the typeof operator. If yes, then calculate the sum of arguments using the + operator.
-    - After that, check if both types of arguments are strings using the typeof operator. If yes, then concatenate two arguments.
-    - Finally, throw an error if arguments are neither numbers nor strings.
+
 */

@@ -1,6 +1,7 @@
 /*
   Why 
 
+
 */
 
 // Understanding dynamic type in JavaScript
@@ -36,10 +37,10 @@ function getProduct(id) {
 }
 // The following uses the getProduct() function to retrieve the product with id 1 and show its data:
 let product = getProduct(1)
-console.log(`The product ${product.Name} costs $${product.price}`) // The product undefined costs $99.5
+console.log(`The product ${product.Name} costs $${product.price}`) // The product undefined costs $99.5 -> Name !== name
 
 /*
-  - The issue with this code is that the product object doesn’t have the Name property. It has the name property with the first letter n in lowercase.
+  - The issue with this code is that the product object doesn’t have the <Name> property. It has the <name> property with the first letter n in lowercase.
 
   - However, you can only know it until you run the script.
   

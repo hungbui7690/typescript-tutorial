@@ -2,17 +2,19 @@
   boolean
   - The TypeScript boolean type has two values: true and false. The boolean type is one of the primitive types in TypeScript.
 
+
 */
 
-// In TypeScript, you can declare a boolean variable using the boolean keyword. For example:
+// 1. In TypeScript, you can declare a boolean variable using the boolean keyword. For example:
 let checked: boolean
 checked = true
+
 // after a while
 // ..
 checked = false
 
-// To manipulate boolean values, you use the boolean operators. TypeScript supports common boolean operators: && || !
-// NOT operator
+// 2. To manipulate boolean values, you use the boolean operators. TypeScript supports common boolean operators: && || !
+// a. NOT operator
 const pending: boolean = true
 const notPending = !pending // false
 console.log(notPending) // false
@@ -20,16 +22,16 @@ console.log(notPending) // false
 const hasError: boolean = false
 const isCompleted: boolean = true
 
-// AND operator
+// b. AND operator
 let result = isCompleted && hasError
 console.log(result) // false
 
-// OR operator
+// c. OR operator
 result = isCompleted || hasError
 console.log(result) // true
 
-/////////////////////////////
-// Type annotations for boolean
+// \\\\\\\\\\\\\\\\\\\\\\\\\\
+// 3. Type annotations for boolean
 // As seen in previous examples, you can use the boolean keyword to annotate the types for the boolean variables:
 let completed: boolean = true
 
@@ -44,15 +46,14 @@ function changeStatus(status: boolean): boolean {
 
 /*
   Boolean Type
+  - JavaScript has the "Boolean" type that refers to the non-primitive boxed object. The Boolean type has the letter B in uppercase, which is different from the boolean type.
+  - It’s a good practice to avoid using the "Boolean" type.
 
-    JavaScript has the "Boolean" type that refers to the non-primitive boxed object. The Boolean type has the letter B in uppercase, which is different from the boolean type.
-
-    It’s a good practice to avoid using the "Boolean" type.
 
   Summary
-
     TypeScript boolean type has two values true and false.
     Use the boolean keyword to declare boolean variables.
     Do not use Boolean type unless you have a good reason to do so.
+
 
 */

@@ -1,19 +1,22 @@
 /*
   Why 
 
+
+***************************
+  # How Typescript solves the problems of dynamic types
+  -> To fix the problem of referencing a property that doesn’t exist on an object, you do the following steps:
+
+
 */
 
-// How Typescript solves the problems of dynamic types
-// To fix the problem of referencing a property that doesn’t exist on an object, you do the following steps:
-
-// First, define the “shape” of the product object using an interface. Note that you’ll learn about the interface in a later tutorial.
+// 1. define the “shape” of the product object using an interface. Note that you’ll learn about the interface in a later tutorial.
 interface Product {
   id: number
   name: string
   price: number
 }
 
-// Second, explicitly use the Product type as the return type of the getProduct() function:
+// 2. explicitly use the Product type as the return type of the getProduct() function:
 function getProduct(id): Product {
   return {
     id: id,

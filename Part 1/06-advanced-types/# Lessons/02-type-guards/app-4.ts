@@ -1,6 +1,14 @@
 /*
   Type Guards
   - allow you to narrow down the type of a variable within a conditional block.
+    -> <is>: type predication
+      + used at the return type
+
+
+**************************
+
+  - User-defined type guards allow you to define a type guard or help TypeScript infer a type when you use a function.
+
 
 */
 
@@ -18,16 +26,12 @@ class Supplier {
 }
 type BusinessPartner = Customer | Supplier
 
-///////////////////////////////
-// User-defined Type Guards
-
-// User-defined type guards allow you to define a type guard or help TypeScript infer a type when you use a function.
-// A user-defined type guard function is a function that simply returns arg is aType. For example:
+// 1. A user-defined type guard function is a function that simply returns arg is aType. For example:
 function isCustomer(partner: any): partner is Customer {
   return partner instanceof Customer
 }
 
-// In this example, the isCustomer() is a user-defined type guard function. Now you can use it in as follows:
+// 2. In this example, the isCustomer() is a user-defined type guard function. Now you can use it in as follows:
 function signContract(partner: BusinessPartner): string {
   let message: string
   if (isCustomer(partner)) {
@@ -45,8 +49,7 @@ function signContract(partner: BusinessPartner): string {
 
 /*
   Summary
-
-    Type guards narrow down the type of a variable within a conditional block.
-    Use the typeof and instanceof operators to implement type guards in the conditional blocks
+  - Type guards narrow down the type of a variable within a conditional block.
+  - Use the typeof and instanceof operators to implement type guards in the conditional blocks
 
 */

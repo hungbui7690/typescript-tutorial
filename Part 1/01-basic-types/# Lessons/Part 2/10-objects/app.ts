@@ -1,9 +1,7 @@
 /*
   object 
   - The TypeScript object type represents all values that are not in primitive types.
-
   - The following are primitive types in TypeScript:
-
         number
         bigint
         string
@@ -12,9 +10,10 @@
         undefined
         symbol
 
+
 */
 
-// The following shows how to declare a variable that holds an object:
+// 1. The following shows how to declare a variable that holds an object:
 let employee: object
 employee = {
   firstName: 'John',
@@ -24,15 +23,15 @@ employee = {
 }
 console.log(employee)
 
-// If you reassign a primitive value to the employee object, you’ll get an error :
+// 2. If you reassign a primitive value to the employee object, you’ll get an error :
 employee = 'Jane' // err: Type 'string' is not assignable to type 'object'.
 
 // The employee object is an object type with a fixed list of properties. If you attempt to access a property that doesn’t exist on the employee object, you’ll get an error:
 console.log(employee.hireDate) // Property 'hireDate' does not exist on type 'object'.
 // Note that the above statement works perfectly fine in JavaScript and returns undefined instead.
 
-///////////////////////////
-// To explicitly specify properties of the employee object, you first use the following syntax to declare the employee object:
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\
+// 3. To explicitly specify properties of the employee object, you first use the following syntax to declare the employee object:
 let employeeX: {
   firstName: string
   lastName: string
@@ -66,6 +65,7 @@ let employeeY: {
     - TypeScript has another type called Object with the letter O in uppercase. It’s important to understand the differences between them.
     - The object type represents all non-primitive values while the Object type describes the functionality of all objects.
     - For example, the Object type has the toString() and valueOf() methods that can be accessible by any object.
+
 */
 
 // The empty type {}

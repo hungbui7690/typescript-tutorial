@@ -1,0 +1,11 @@
+# node modules
+node_modules
+
+# built ts files
+dist
+
+# package-lock.json
+package-lock.json
+
+# configurations
+.env
