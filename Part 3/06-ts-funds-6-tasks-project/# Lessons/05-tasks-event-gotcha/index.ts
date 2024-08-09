@@ -21,33 +21,23 @@ type Task = {
 
 const tasks: Task[] = []
 
-function addTask(task: Task): void {
-  tasks.push(task)
-}
-
-// 1.
-function renderTask(task: Task): void {
-  const taskElement = document.createElement('li')
-  taskElement.textContent = task.description
-  taskListElement?.appendChild(taskElement)
-}
-
-taskForm?.addEventListener('submit', (event) => {
-  event.preventDefault()
+// 1. when we use cb fn in addEventListener() -> TS knows that "e" is SubmitEvent
+// -> but, when we pass the ref like this, TS does not know what is the type of "e" -> we need to use type annotation here
+function createTask(e: SubmitEvent) {
+  e.preventDefault()
   const taskDescription = formInput?.value
 
   if (taskDescription) {
-    const task: Task = {
-      description: taskDescription,
-      isCompleted: false,
-    }
-    addTask(task)
-    renderTask(task) // 2.
-
+    // add task to list
+    // render tasks
     // update local storage
 
     formInput.value = ''
+    console.log('abc')
     return
   }
+
   alert('Please enter a task description')
-})
+}
+
+taskForm?.addEventListener('submit', createTask) // 2.

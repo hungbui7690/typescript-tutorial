@@ -18,18 +18,18 @@ type Task = {
   isCompleted: boolean
 }
 
-const tasks: Task[] = loadTasks() // (4) Retrieve tasks from localStorage
+const tasks: Task[] = loadTasks() // 4. Retrieve tasks from localStorage
 
-tasks.forEach((task) => renderTask(task)) // (5) Render tasks at runtime
+tasks.forEach((task) => renderTask(task)) // 5. Render tasks at runtime
 // tasks.forEach(renderTask) // alt way
 
-// (3) Load tasks from localStorage
+// 3. Load tasks from localStorage
 function loadTasks(): Task[] {
   const storedTasks = localStorage.getItem('tasks')
   return storedTasks ? JSON.parse(storedTasks) : []
 }
 
-// (1) Update tasks in localStorage
+// 1. Update tasks in localStorage
 function updateStorage(): void {
   localStorage.setItem('tasks', JSON.stringify(tasks))
 }
@@ -56,7 +56,7 @@ taskForm?.addEventListener('submit', (event) => {
     addTask(task)
     renderTask(task)
 
-    updateStorage() // (2) update local storage
+    updateStorage() // 2. update local storage
 
     formInput.value = ''
     return

@@ -1,6 +1,7 @@
 /*
   Classes - ReadOnly Modifier
 
+
 */
 
 class Book {
@@ -15,4 +16,4 @@ class Book {
 }
 
 const deepWork = new Book('deep work ', 'cal newport')
-// deepWork.title = 'something else' // readonly > cannot modify
+// deepWork.title = 'something else' // readonly -> err

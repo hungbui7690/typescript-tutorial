@@ -7,6 +7,7 @@
     ul.list
     button.test-btn
 
+
 */
 
 const taskForm = document.querySelector('.form') as HTMLFormElement
@@ -20,11 +21,11 @@ type Task = {
 
 const tasks: Task[] = []
 
-// (1) when we use cb fn in addEventListener() > TS knows that "e" is SubmitEvent
-// > but now, when we pass the ref like this, TS does not know what is the type of "e" > we need to use type annotation here
-function createTask(e: SubmitEvent) {
-  e.preventDefault()
-  const taskDescription = formInput?.value
+// we don't use non-null assertion above -> then use optional chaining here
+taskForm?.addEventListener('submit', (e) => {
+  e.preventDefault() // hover -> event has the type of SubmitEvent
+
+  const taskDescription = formInput?.value // since we don't have non null assertion above -> we need to use optional chaining here
 
   if (taskDescription) {
     // add task to list
@@ -32,11 +33,7 @@ function createTask(e: SubmitEvent) {
     // update local storage
 
     formInput.value = ''
-    console.log('abc')
     return
   }
-
   alert('Please enter a task description')
-}
-
-taskForm?.addEventListener('submit', createTask) // (2)
+})

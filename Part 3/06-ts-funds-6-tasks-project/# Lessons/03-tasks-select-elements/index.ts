@@ -7,13 +7,14 @@
     ul.list
     button.test-btn
 
+
 */
 
 const taskForm = document.querySelector('.form') as HTMLFormElement // we don't use non-null assertion here
 const formInput = document.querySelector('.form-input') as HTMLInputElement
 const taskListElement = document.querySelector('.list') as HTMLUListElement
 
-// task type > shape of our data > we can use "interface" or "type alias"
+// setup shape of our data -> we can use "interface" or "type alias"
 type Task = {
   description: string
   isCompleted: boolean

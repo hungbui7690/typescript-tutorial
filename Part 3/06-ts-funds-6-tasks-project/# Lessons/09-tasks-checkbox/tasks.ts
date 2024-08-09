@@ -7,6 +7,7 @@
     ul.list
     button.test-btn
 
+
 */
 
 const taskForm = document.querySelector('.form') as HTMLFormElement
@@ -39,18 +40,18 @@ function renderTask(task: Task): void {
   const taskElement = document.createElement('li')
   taskElement.textContent = task.description
 
-  // (1) create checkbox
+  // 1. create checkbox
   const taskCheckbox = document.createElement('input')
   taskCheckbox.type = 'checkbox'
   taskCheckbox.checked = task.isCompleted
 
-  // (3) toggle checkbox > test in Application > Local Storage
+  // 2. toggle checkbox -> test in Application -> Local Storage
   taskCheckbox.addEventListener('change', () => {
     task.isCompleted = !task.isCompleted
     updateStorage()
   })
 
-  // (2)
+  // 3.
   taskElement.appendChild(taskCheckbox)
 
   taskListElement?.appendChild(taskElement)

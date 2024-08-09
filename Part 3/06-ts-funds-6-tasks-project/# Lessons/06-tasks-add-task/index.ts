@@ -7,6 +7,7 @@
     ul.list
     button.test-btn
 
+
 */
 
 const taskForm = document.querySelector('.form') as HTMLFormElement
@@ -20,18 +21,33 @@ type Task = {
 
 const tasks: Task[] = []
 
-// we don't use non-null assertion above > then use optional chaining
-taskForm?.addEventListener('submit', (e) => {
-  e.preventDefault() // *** event has the type of submit
+// 1.
+function addTask(task: Task): void {
+  tasks.push(task)
+  // console.log(tasks);
+}
 
-  const taskDescription = formInput?.value // since we don't have non null assertion above > we need to use optional chaining here
+taskForm?.addEventListener('submit', (event) => {
+  event.preventDefault()
+  const taskDescription = formInput?.value
 
+  // 2.
   if (taskDescription) {
+    // create task
+    const task: Task = {
+      description: taskDescription,
+      isCompleted: false,
+    }
     // add task to list
+    addTask(task)
+    console.log(tasks)
+
     // render tasks
     // update local storage
 
+    // reset field
     formInput.value = ''
+
     return
   }
   alert('Please enter a task description')

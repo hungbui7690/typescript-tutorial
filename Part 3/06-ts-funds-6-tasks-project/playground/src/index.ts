@@ -18,35 +18,47 @@ type Task = {
   isCompleted: boolean
 }
 
-const tasks: Task[] = []
+const tasks: Task[] = loadTasks() // 4. Retrieve tasks from localStorage
 
-// (1) Add Task
+tasks.forEach((task) => renderTask(task)) // 5. Render tasks at runtime
+// tasks.forEach(renderTask) // alt way
+
+// 3. Load tasks from localStorage
+function loadTasks(): Task[] {
+  const storedTasks = localStorage.getItem('tasks')
+  return storedTasks ? JSON.parse(storedTasks) : []
+}
+
+// 1. Update tasks in localStorage
+function updateStorage(): void {
+  localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
 function addTask(task: Task): void {
   tasks.push(task)
-  // console.log(tasks);
+}
+
+function renderTask(task: Task): void {
+  const taskElement = document.createElement('li')
+  taskElement.textContent = task.description
+  taskListElement?.appendChild(taskElement)
 }
 
 taskForm?.addEventListener('submit', (event) => {
   event.preventDefault()
   const taskDescription = formInput?.value
 
-  // (2)
   if (taskDescription) {
-    // (a) create task
     const task: Task = {
       description: taskDescription,
       isCompleted: false,
     }
-    // (b) add task to list
     addTask(task)
-    console.log(tasks)
+    renderTask(task)
 
-    // render tasks
-
-    // update local storage
+    updateStorage() // 2. update local storage
 
     formInput.value = ''
-
     return
   }
   alert('Please enter a task description')
