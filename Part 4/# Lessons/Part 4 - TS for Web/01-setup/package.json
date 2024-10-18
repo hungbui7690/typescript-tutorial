@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.7.6",
+    "parcel": "^2.12.0",
+    "tsx": "^4.19.1"
+  },
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "esbuild": "^0.23.1",
+    "get-tsconfig": "^4.8.1",
+    "resolve-pkg-maps": "^1.0.0"
+  },
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "start": "parcel ./src/*.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
